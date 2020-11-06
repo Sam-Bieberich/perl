@@ -1,0 +1,8 @@
+#!/bin/bash
+if ! [[ $LOADEDMODULES =~ :rlwrap/ ]] ;
+  then
+    echo "rlwrap module not loaded" 1>&2
+    exit 1
+  fi
+echo 'This is Interactive Perl shell'
+rlwrap -A -pgreen -S"perl> " /usr/bin/perl -wnE'say eval()//$@'
